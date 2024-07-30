@@ -1,0 +1,110 @@
+<section class="text-gray-600 body-font">
+  <div class="flex flex-col text-center w-full mb-10">
+    <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">Experiences</h1>
+  </div>
+    <div class="container px-5 py-10 mx-auto flex">
+      {{ $experiences:= site.Data.portfolio.experiences.experiences }}
+      <div class="basis-1/4">
+        <aside class="w-72 px-4 py-2 border-r ml-auto sticky top-20">
+          <ul class="text-lg font-bold" id="experiences">
+            {{ range $experiences }}
+                {{ $company:= .company }}
+                {{ range .positions }}
+                    <li class="my-2 pl-2">
+                        <a href="#{{urlize .name }}">
+                            <h3 class="text-xl">{{.name}}</h3>
+                            <a class="text-sm" href="{{$company.url}}">{{$company.name}}</a>
+                            <h5 class="text-xs subtitle">{{.start}} -  {{.end}}</h5>
+                        </a>
+                    </li>
+                {{ end }}
+            {{ end }}
+          </ul>
+        </aside>
+      </div>
+      <div class="grow pl-4 ml-4">
+        {{ range $experiences }}
+            {{ $company:= .company }}
+            {{ range .positions }}
+            <div id="{{urlize .name }}" class="mb-4">
+              <div class="p-3 flex flex-wrap flex-col justify-center md:flex-row lg:justify-start -m-4">
+                <ul class="w-full">
+                  <h3 class="text-xl">{{.name}}</h3>
+                  <div class="inline-flex justify-between w-full pb-2">
+                    <a class="text-md text-blue-600" href="{{$company.url}}">{{$company.name}}</a>
+                    <h5 class="text-sm subtitle text-gray-400">{{.start}} -  {{.end}} ({{.duration}})</h5>
+                  </div>
+                  <p>{{.summary}}</p>
+                  <h5 class="text-md italic subtitle pt-2">My Contributions</h5>
+                  <ul class="list-disc px-4">
+                    {{ range .contributions }}
+                      <li>{{.}}</li>
+                    {{ end }}
+                  </ul>
+                </ul>
+              </div>
+            </div>
+            {{ end }}
+        {{ end }}
+      </div>
+    </div>
+
+  {{/*
+  =============== Scroll Spy for recent post section ============
+        Ref: https://github.com/cferdinandi/gumshoe
+  ===========================================================
+  */}}
+  {{ $js:= resources.Get "js/gumshoe.polyfills.min.js"}}
+  <script src="{{$js.RelPermalink}}"></script>
+    <script>
+      var spy = new Gumshoe('#experiences a',{
+
+        // Active classes
+        navClass: 'nav-active', // applied to the nav list item
+        contentClass: 'active', // applied to the content
+      
+        // Nested navigation
+        nested: false, // if true, add classes to parents of active link
+        nestedClass: 'child-active', // applied to the parent items
+      
+        // Offset & reflow
+        offset: 120, // how far from the top of the page to activate a content area
+        reflow: false, // if true, listen for reflows
+      
+        // Event support
+        events: false // if true, emit custom events
+      
+      });
+    </script>
+</section>
+
+{{/*  <section>
+    <div class="container px-5 py-10 mx-auto">
+        <div class="flex flex-col text-center w-full mb-10">
+          <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">Experiences</h1>
+        </div>
+        <div class="pb-3 flex flex-wrap flex-col justify-center md:flex-row lg:justify-start -m-4 bg-red-100">
+            <div class="flex flex-col w-96">
+               <ul class="text-lg font-bold" id="experiences">
+                {{ range $key,$experience:=site.Data.portfolio.experiences.experiences }}
+                    {{$company:=.company}}
+                    {{ range .positions }}
+                        <li class="my-2 pl-2">
+                            <a href="#{{urlize .name }}">
+                                <div>
+                                    <h3>{{.name}}</h3>
+                                    <a href="{{$company.url}}">{{$company.name}}</a>
+                                    <h5>{{.start}} - {{.end}} ({{.duration}})</h5>
+                                </div>
+                            </a>
+                        </li>
+                    {{end}}
+                {{ end }}
+                </ul>
+            </div>
+            <div class="flex flex-auto bg-blue-500">
+                Experiences
+            </div>
+        </div>
+      </div>
+</section>  */}}

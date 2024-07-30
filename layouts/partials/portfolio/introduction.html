@@ -1,0 +1,39 @@
+<section class="text-gray-600 body-font bg-sky-100">
+    <div class="container px-2 lg:mx-auto lg:px-5 py-40 flex flex-col lg:flex-row items-center flex-wrap align-baseline">
+      <div class="w-full lg:basis-1/3  bg-red-0">
+        <div class="flex flex-col items-center">
+          {{ $image := resources.Get "images/emruz_2.png"}}
+          <img class="mb-5 object-cover object-center rounded w-64 h-64 bg-slate-100" alt="hero" src="{{$image.RelPermalink}}">
+          <h1 class="title-font text-3xl m-1 font-medium text-gray-900">Emruz Hossain</h1>
+          <div class="title-font sm:text-xl text-xl m-1 font-medium text-gray-900 text-center">Professional Software Developer</div>
+          <div class="flex flex-row justify-center items-baseline w-full">
+            <i data-feather="map-pin" class="w-4 h-4"></i>
+            <span class="ml-2 title-font text-md font-medium text-gray-600">Dhaka, Bangladesh</span>
+          </div>
+        </div>
+      </div>
+      <div class="w-full lg:basis-1 lg:flex-grow bg-blue-0 p-4">
+        <h4 class="text-2xl text-center lg:text-left text-cyan-600">Hi there! I am</h4>
+        <p class="mt-4 mb-4 leading-relaxed text-justify">
+          Passionate Software Engineer with around 5 years of working experience. Ex- pertise with Kubernetes, Docker and other cloud native technologies. Work mainly with GO but interested in learning other languages based on neces- sity. Leading Stash project which is a disaster recovery tool for Kubernetes native applications at AppsCode. One of the major contributor of KubeDB, an operator for running production grade databases in Kubernetes. Experi- enced with building an event-based Machine Learning pipeline using Python, RabbitMQ and Docker Compose.
+        </p>
+        <div class="flex flex-colum lg:flex-row flex-wrap lg:justify-between justify-center">
+          <div class="mt-1 mb-1 flex flex-row w-full lg:basis-1/3 bg-cyan-0 items-center justify-center lg:justify-start">
+            <a class="w-10 h-10 ml-1 mr-1 bg-gray-600 text-gray-200 hover:bg-cyan-600 rounded flex justify-center" href="#">
+              <i data-feather="github" class="m-2"></i>
+            </a>
+            <a class="w-10 h-10 ml-1 mr-1 bg-gray-600 text-gray-200 hover:bg-cyan-600 rounded flex justify-center" href="#">
+              <i data-feather="linkedin" class="m-2"></i>
+            </a>
+            <a class="w-10 h-10 ml-1 mr-1 bg-gray-600 text-gray-200 hover:bg-cyan-600 rounded flex justify-center" href="#">
+              <i data-feather="twitter" class="m-2"></i>
+            </a>
+            <a class="w-10 h-10 ml-1 mr-1 bg-gray-600 text-gray-200 hover:bg-cyan-600 rounded flex justify-center" href="#">
+              <i data-feather="facebook" class="m-2"></i>
+            </a>
+          </div>
+          <a class="mt-1 mb-1 w-auto h-10 ml-1 mr-1 p-2 bg-gray-600 text-gray-200 hover:bg-cyan-600 rounded flex justify-center" href="#">My Resume</a>
+        </div>
+      </div>
+    </div>
+</section>

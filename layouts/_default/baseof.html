@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ .Language.Lang }}" class="scroll-smooth scroll-pt-16">
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+  <body class="bg-white overflow-x-hidden">
+      {{/*  ============== Header block  =============*/}}
+      {{ block "header" . }}
+        {{ partial "navigation/top-navbar.html" . }}
+      {{end}}
+      {{/*  =============== Main block =====================  */}}
+      {{ block "main" . }} {{ end }}
+
+      {{/*  =============== Footer block =====================  */}}
+      {{ block "footer" . }}
+        {{ partial "navigation/footer.html" . }}
+      {{end}}
+      {{/*  ============== Mandatory scripts =================  */}}
+      {{ partial "scripts.html" . }}
+  </body>
+</html>

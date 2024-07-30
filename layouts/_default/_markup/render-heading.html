@@ -1,0 +1,5 @@
+<h{{ .Level }} id="{{ .Anchor | safeURL }}" class="flex item-baseline">
+    <a href="#{{ .Anchor | safeURL }}" class="no-underline hover:text-cyan-600 snap-start">
+        {{ .Text | safeHTML }}
+    </a>
+</h{{ .Level }}>

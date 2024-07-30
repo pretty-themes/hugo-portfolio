@@ -1,0 +1,37 @@
+{
+  "author": "Emruz Hossain",
+  "name": "huog-portfolio",
+  "description": "A portfolio template for Hugo using Tailwind CSS",
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.19",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.40",
+    "tailwindcss": "^3.4.7"
+  },
+  "scripts": {
+    "start:css": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css -w",
+    "start:hugo": "hugo server",
+    "start": "run-p start:*",
+    "build:css": "npx tailwindcss -i ./assets/css/main.css -o ./assets/css/style.css -m",
+    "build:hugo": "hugo --minify",
+    "build": "run-s build:*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pretty-themes/hugo-portfolio.git"
+  },
+  "keywords": [
+    "hugo",
+    "tailwind",
+    "tailwindcss",
+    "portfolio"
+  ],
+  "main": "index.js",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pretty-themes/hugo-portfolio/issues"
+  },
+  "homepage": "https://github.com/pretty-themes/hugo-portfolio.git",
+  "version": "1.0.0"
+}

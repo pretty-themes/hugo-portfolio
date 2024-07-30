@@ -1,0 +1,49 @@
+<!-- This example requires Tailwind CSS v2.0+ -->
+<div class="relative hidden z-10" aria-labelledby="modal-title" role="dialog" aria-modal="true" id="skill-details-{{.}}">
+  <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"></div>
+  <div class="fixed z-10 inset-0 overflow-y-auto">
+    <div class="flex items-end sm:items-center justify-center min-h-full p-4 text-center sm:p-0">
+      <div class="relative bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:max-w-lg md:max-w-2xl sm:w-full">
+        <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex flex-col">
+          <div class="inline-flex items-baseline">
+            <div class="w-10 h-10 inline-flex items-center justify-center rounded-full bg-indigo-100 text-white flex-shrink-0">
+                {{ $image := resources.Get "images/kubernetes.svg"}}
+                <img class="object-cover object-center rounded w-6 h-6 bg-slate-200" alt="hero" src="{{$image.RelPermalink}}">
+            </div>
+            <h2 class="text-gray-900 text-2xl title-font font-medium ml-2">Skill Modal No {{.}}</h2>
+          </div>
+          {{/*  <div class="inline-flex ml-2">
+            <div class="inline-flex align-baseline">
+              <i data-feather="check-circle" class="w-4 h-4 text-green-500 m-auto mr-1"></i>
+              <h3>Production Experience</h3>
+            </div>
+          </div>  */}}
+        </div>
+        <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+          <p class="text-sm text-gray-500">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque, adipisci doloribus. Nisi, unde ipsum ad autem sit in neque officiis natus commodi sed, debitis, consequuntur iure quo voluptatibus veniam soluta!
+          </p>
+          <h5 class="pt-2">Capabilities:</h5>
+          <ul class="list-disc pl-4">
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</li>
+            <li>Minus amet vero similique veniam deleniti voluptates at.</li> 
+            <li>Officiis rerum necessitatibus impedit dolor illo, culpa quis, obcaecati voluptatibus</li>
+            <li>Maiores dignissimos doloribus quod.</li>
+          </ul>
+        </div>
+        <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+          <button type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm" onclick="toggleModal('skill-details-{{.}}')">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+    function toggleModal(id){
+      let modal = document.getElementById(id)
+      if (typeof modal !== "undefined" && modal !== null ){
+        modal.classList.toggle("hidden")
+        console.log(modal)
+      }
+  }
+</script>

@@ -1,0 +1,112 @@
+<header
+  class="bg-white fixed top-0 w-full transition-all duration-300 border-b border-slate-200 z-50 print:hidden"
+  id="top-navbar"
+>
+  <div
+    class="flex items-center justify-between h-16 mx-auto max-w-screen-2xl sm:px-6 lg:px-8"
+  >
+    <div class="flex items-center">
+      <button type="button" class="p-2 sm:mr-4 lg:hidden">
+        <svg
+          class="w-6 h-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+
+      <a href="{{site.BaseURL}}" class="flex">
+        <span class="inline-block w-32 h-10 bg-red-300 rounded-lg"></span>
+        <img class="w-24" src="images/gopher.png" alt="Brand Icon">
+      </a>
+    </div>
+
+    <div class="flex items-center justify-end flex-1">
+      <nav
+        class="hidden lg:uppercase lg:text-gray-500 lg:tracking-wide lg:font-bold lg:text-xs lg:space-x-4 lg:flex"
+      >
+        <a
+          href="/blog"
+          class="block h-16 leading-[4rem] border-b-4 border-transparent hover:text-cyan-600 hover:border-current"
+        >
+          Blog
+        </a>
+
+        <a
+          href="/notes"
+          class="block h-16 leading-[4rem] border-b-4 border-transparent hover:text-cyan-600 hover:border-current"
+        >
+          Notes
+        </a>
+
+        <a
+          href="/docs"
+          class="block h-16 leading-[4rem] border-b-4 border-transparent hover:text-cyan-600 hover:border-current"
+        >
+          Docs
+        </a>
+
+        <a
+          href="/awesomelist"
+          class="block h-16 leading-[4rem] border-b-4 border-transparent hover:text-cyan-600 hover:border-current"
+        >
+          Awesome List
+        </a>
+      </nav>
+
+      <div class="flex items-center ml-8 text-gray-500">
+        <div
+          class="flex items-center border-slate-200 divide-x divide-slate-200 border-x"
+        >
+          <span class="hover:text-cyan-600">
+            <a
+              href="#"
+              class="block p-6 border-b-4 border-transparent hover:border-current"
+            >
+            <i data-feather="search" class="w-4 h-4"></i>
+
+              <span class="sr-only">Settings</span>
+            </a>
+          </span>
+
+          <span class="hover:text-cyan-600">
+            <button type="button" class="block p-6 border-b-4 border-transparent hover:border-current" onclick="toggleSettingPanel()">
+              <i data-feather="settings" class="w-4 h-4"></i>
+              <span class="sr-only"> Settings </span>
+            </button>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    // When the user scrolls down 40px from the top of the document, change the navbar color
+    window.onscroll = function () {
+      toggleNavbarBackground();
+    };
+    function toggleNavbarBackground() {
+      if (
+        document.body.scrollTop > 20 ||
+        document.documentElement.scrollTop > 20
+      ) {
+        let nav = document.getElementById("top-navbar");
+        if (!nav.classList.contains("shadow")) {
+          nav.classList.add("shadow");
+        }
+      } else {
+        let nav = document.getElementById("top-navbar");
+        if (nav.classList.contains("shadow")) {
+          nav.classList.remove("shadow");
+        }
+      }
+    }
+  </script>
+</header>

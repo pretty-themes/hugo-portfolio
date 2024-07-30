@@ -1,0 +1,24 @@
+<div class="p-3 md:w-1/2 lg:w-1/3 m-h-8">
+  <a class="group flex flex-col rounded-lg border h-full p-4 hover:bg-cyan-500 hover:text-white hover:shadow" href="{{.RelPermalink}}">
+    <div class="inline-flex justify-between pb-2">
+      <div class="text-sm text-gray-600 group-hover:text-white">{{.Date | time.Format "Aug 6, 2022"}}</div>
+      <div class="rounded-md px-2 py-1 bg-sky-100">
+        <h5 class="text-sm text-sky-600 font-medium">Kubernetes</h5>
+      </div>
+    </div>
+    <h1 class="text-xl text-gray-600 font-bold pb-2 group-hover:text-white">{{.Title}}</h1>
+    <div class="text-justify pb-3">
+      <p class="text-ellipsis overflow-hidden max-h-24">{{.Summary}}</p>
+    </div>
+    <div class="inline-flex justify-between pb-2 mt-auto">
+      <div class="inline-flex align-baseline text-gray-600 group-hover:text-white">
+        <i class="w-4 h-4 m-auto" data-feather="clock"></i>
+        <h5 class="ml-2 text-sm m-auto">{{.ReadingTime}} min to read</h5>
+      </div>
+      <div class="inline-flex align-baseline text-cyan-600 group-hover:text-white">
+        <h5 class="text-sm m-auto">Read</h5>
+        <i class="w-4 h-4 ml-2 m-auto" data-feather="arrow-right"></i>
+      </div>
+    </div>
+  </a>
+</div>
