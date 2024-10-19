@@ -1,3 +1,29 @@
 baseURL: https://example.org/
 languageCode: en-us
 title: My New Hugo Site
+
+languages:
+  en:
+    languageName: English
+    weight: 1
+    menus:
+      main:
+        - name: Blog
+          pageRef: /blog
+          weight: 1
+        - name: Notes
+          pageRef: /notes
+          weight: 2
+        - name: Awesome List
+          pageRef: /awesomelist
+          weight: 3
+
+params:
+  topNavbar:
+    brand:
+      icon: images/gopher.png
+      text: EMRUZ
+    search:
+      enabled: false
+    settings:
+      enabled: false

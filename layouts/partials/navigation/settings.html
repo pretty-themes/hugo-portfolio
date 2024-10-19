@@ -1,0 +1,89 @@
+{{$theme_selector:= slice "border" "h-16" "flex" "flex-col" "item-baseline" "p-2" "rounded" "cursor-pointer"}}
+{{$theme_selector = $theme_selector | append "hover:bg-cyan-500" "hover:text-white"}}
+{{$theme_selector = $theme_selector | append "peer-checked:z-10" "peer-checked:bg-cyan-500" "peer-checked:text-white"}}
+
+{{$accent_color:= slice "border" "h-8" "w-8" "mx-1" "flex" "flex-col" "item-baseline" "p-2" "rounded-full" "cursor-pointer"}}
+{{$accent_color = $accent_color | append "hover:bg-cyan-500" "hover:text-white"}}
+{{$accent_color = $accent_color | append "peer-checked:z-10" "peer-checked:ring-2" "peer-checked:ring-cyan-500"}}
+
+
+{{$language_selector:= slice "h-8" "w-48" "inline-flex" "items-center" "my-1" "px-2" "rounded"}}
+{{$language_selector = $language_selector | append "hover:bg-cyan-500" "hover:text-white"}}
+{{$language_selector = $language_selector | append "peer-checked:z-10" "peer-checked:bg-cyan-500" "peer-checked:text-white"}}
+
+<div class="fixed inset-0 bg-cyan-50 bg-opacity-0 hidden transition-all duration-300 ease-out z-10" id="opaque-filter"></div>
+
+<aside class="fixed top-16 min-h-screen bg-white shadow-xl w-96 px-4 py-2 z-10 transition-all duration-300 -right-128" id="setting-panel">
+    <div class="flex flex-col pb-4">
+        <h1 class="text-xl text-title font-bold">Theme</h1>
+        <form class="grid grid-cols-3 gap-2 pt-2 w-56">
+            <fieldset>
+                <input type="radio" class="peer hidden" id="system_theme" name="theme_selector">
+                <label class="{{delimit $theme_selector " "}}" for="system_theme">
+                    <i data-feather="monitor" class="m-auto"></i>
+                    <h1 class="m-auto">System</h1>
+                </label>
+            </fieldset>
+            <fieldset>
+                <input type="radio" class="hidden peer" id="light_theme" name="theme_selector">
+                <label class="{{delimit $theme_selector " "}}" for="light_theme">
+                    <i data-feather="sun" class="m-auto"></i>
+                    <h1 class="m-auto">Light</h1>
+                </label>
+            </fieldset>
+            <fieldset>
+                <input type="radio" class="hidden peer" id="dark_theme" name="theme_selector">
+                <label class="{{delimit $theme_selector " "}}" for="dark_theme">
+                    <i data-feather="moon" class="m-auto"></i>
+                    <h1 class="m-auto">Dark</h1>
+                </label>
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="flex flex-col pb-4">
+        <h1 class="text-xl text-title font-bold">Accent Color</h1>
+        <form class="inline-flex w-full py-2">
+            {{ range $color:= slice "blue" "indigo" "gray" "yellow"}}
+            <fieldset>
+                <input type="radio" class="hidden peer" name="accent_color" id="{{$color}}">
+                <label class="{{delimit $accent_color " "}} bg-{{$color}}-500" for="{{$color}}">
+                    {{/*  <div class="rounded-full w-6 h-6 bg-{{$color}}-500 peer-checked"></div>  */}}
+                </label>
+            </fieldset>
+            {{ end }}
+        </form>
+    </div>
+
+    <div class="flex flex-col">
+        <h1 class="text-xl text-title font-bold">Language</h1>
+        <form class="flex flex-col w-full py-2">
+            {{ range $language:=slice "English" "বাংলা" "Français" "Indonesian" "Deutsch" "Español" "简体中文" "हिन्दी" }}
+                <fieldset>
+                    <input type="radio" class="hidden peer" name="language_selector" id="{{$language}}">
+                    <label class="{{delimit $language_selector " "}}" for="{{$language}}">
+                        <i data-feather="globe" class="w-4 h-4"></i>
+                        <h1 class="ml-2">{{$language}}</h1>
+                    </label>
+                </fieldset>
+            {{ end }}
+        </form>
+    </div>
+</aside>
+
+<script>
+    function toggleSettingPanel(){
+        let p = document.getElementById("setting-panel");
+        if (p){
+            p.classList.toggle("-right-128");
+            p.classList.toggle("right-0");
+        }
+
+        let f = document.getElementById("opaque-filter");
+        if (f){
+            f.classList.toggle("hidden");
+            f.classList.toggle("bg-opacity-0");
+            f.classList.toggle("bg-opacity-50");
+        }
+    }
+</script>

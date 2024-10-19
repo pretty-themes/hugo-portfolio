@@ -1,89 +1,72 @@
 <header
-  class="bg-white fixed top-0 w-full transition-all duration-300 border-b border-slate-200 z-50 print:hidden"
+  class="fixed top-0 z-50 w-full border-b border-slate-200 bg-white transition-all duration-300 print:hidden"
   id="top-navbar"
 >
   <div
-    class="flex items-center justify-between h-16 mx-auto max-w-screen-2xl sm:px-6 lg:px-8"
+    class="mx-auto flex h-16 max-w-screen-2xl items-center justify-between sm:px-6 lg:px-8"
   >
     <div class="flex items-center">
       <button type="button" class="p-2 sm:mr-4 lg:hidden">
-        <svg
-          class="w-6 h-6"
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-        </svg>
+        <i data-feather="menu" class="h-6 w-6"></i>
       </button>
 
-      <a href="{{site.BaseURL}}" class="flex items-center">
-        {{ $brandIcon := resources.Get "images/gopher.png"}}
-        <img class="h-10 d-inline-flex" src="{{$brandIcon.RelPermalink}}" alt="Brand Icon">
-        <h1 class="text-2xl italic font-extrabold pl-2 text-slate-800">EMRUZ</h1>
-      </a>
+      {{ with site.Params.topNavbar }}
+        <a href="{{ site.BaseURL }}" class="flex items-center">
+          {{ $brandIcon := resources.Get .brand.icon }}
+          <img
+            class="d-inline-flex h-10"
+            src="{{ $brandIcon.RelPermalink }}"
+            alt="Brand Icon"
+          />
+          <h1 class="pl-2 text-2xl font-extrabold italic text-slate-800">
+            {{ .brand.text }}
+          </h1>
+        </a>
+      {{ end }}
     </div>
 
-    <div class="flex items-center justify-end flex-1">
+    <div class="flex flex-1 items-center justify-end">
       <nav
-        class="hidden lg:uppercase lg:text-gray-500 lg:tracking-wide lg:font-bold lg:text-xs lg:space-x-4 lg:flex"
+        class="hidden lg:flex lg:space-x-4 lg:text-xs lg:font-bold lg:uppercase lg:tracking-wide lg:text-gray-500"
       >
-        <a
-          href="/blog"
-          class="block h-16 leading-[4rem] border-b-4 border-transparent hover:text-cyan-600 hover:border-current"
-        >
-          Blog
-        </a>
-
-        <a
-          href="/notes"
-          class="block h-16 leading-[4rem] border-b-4 border-transparent hover:text-cyan-600 hover:border-current"
-        >
-          Notes
-        </a>
-
-        <a
-          href="/docs"
-          class="block h-16 leading-[4rem] border-b-4 border-transparent hover:text-cyan-600 hover:border-current"
-        >
-          Docs
-        </a>
-
-        <a
-          href="/awesomelist"
-          class="block h-16 leading-[4rem] border-b-4 border-transparent hover:text-cyan-600 hover:border-current"
-        >
-          Awesome List
-        </a>
+        {{ range site.Menus.main }}
+          <a
+            href="{{ .PageRef }}"
+            class="block h-16 border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-cyan-600"
+          >
+            {{ .Name }}
+          </a>
+        {{ end }}
       </nav>
 
-      <div class="flex items-center ml-8 text-gray-500">
+      <div class="ml-8 flex items-center text-gray-500">
         <div
-          class="flex items-center border-slate-200 divide-x divide-slate-200 border-x"
+          class="flex items-center divide-x divide-slate-200 border-x border-slate-200"
         >
-          <span class="hover:text-cyan-600">
-            <a
-              href="#"
-              class="block p-6 border-b-4 border-transparent hover:border-current"
-            >
-            <i data-feather="search" class="w-4 h-4"></i>
+          {{ if site.Params.topNavbar.search.enabled }}
+            <span class="hover:text-cyan-600">
+              <a
+                href="#"
+                class="block border-b-4 border-transparent p-6 hover:border-current"
+              >
+                <i data-feather="search" class="h-4 w-4"></i>
+                <span class="sr-only">Search</span>
+              </a>
+            </span>
+          {{ end }}
 
-              <span class="sr-only">Settings</span>
-            </a>
-          </span>
-
-          <span class="hover:text-cyan-600">
-            <button type="button" class="block p-6 border-b-4 border-transparent hover:border-current" onclick="toggleSettingPanel()">
-              <i data-feather="settings" class="w-4 h-4"></i>
-              <span class="sr-only"> Settings </span>
-            </button>
-          </span>
+          {{ if site.Params.topNavbar.settings.enabled }}
+            <span class="hover:text-cyan-600">
+              <button
+                type="button"
+                class="block border-b-4 border-transparent p-6 hover:border-current"
+                onclick="toggleSettingPanel()"
+              >
+                <i data-feather="settings" class="h-4 w-4"></i>
+                <span class="sr-only"> Settings </span>
+              </button>
+            </span>
+          {{ end }}
         </div>
       </div>
     </div>
