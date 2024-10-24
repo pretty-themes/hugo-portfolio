@@ -1,0 +1,97 @@
+metadata:
+  name: Technical Skills
+  id: tech-skills
+  enabled: true
+  weight: 2
+data:
+  skills:
+    - name: Kubernetes
+      logo: "images/kubernetes.png"
+      highlights:
+        - text: "Great Expertise"
+          icon:
+            provider: feather
+            id: "book"
+        - text: "5 Years of Experience"
+          icon:
+            provider: feather
+            id: "clock"
+        - text: "Production Experience"
+          icon:
+            provider: feather
+            id: "briefcase"
+    - name: Go
+      logo: "images/golang.svg"
+      highlights:
+        - text: "Great Expertise"
+          icon:
+            provider: feather
+            id: "book"
+        - text: "5 Years of Experience"
+          icon:
+            provider: feather
+            id: "clock"
+        - text: "Production Experience"
+          icon:
+            provider: feather
+            id: "briefcase"
+    - name: Python
+      logo: "images/python.webp"
+      highlights:
+        - text: "Great Expertise"
+          icon:
+            provider: feather
+            id: "book"
+        - text: "5 Years of Experience"
+          icon:
+            provider: feather
+            id: "clock"
+        - text: "Production Experience"
+          icon:
+            provider: feather
+            id: "briefcase"
+    - name: Bash
+      logo: "images/bash.svg"
+      highlights:
+        - text: "Great Expertise"
+          icon:
+            provider: feather
+            id: "book"
+        - text: "5 Years of Experience"
+          icon:
+            provider: feather
+            id: "clock"
+        - text: "Production Experience"
+          icon:
+            provider: feather
+            id: "briefcase"
+    - name: AWS
+      logo: "images/aws.webp"
+      highlights:
+        - text: "Great Expertise"
+          icon:
+            provider: feather
+            id: "book"
+        - text: "5 Years of Experience"
+          icon:
+            provider: feather
+            id: "clock"
+        - text: "Production Experience"
+          icon:
+            provider: feather
+            id: "briefcase"
+    - name: Google Cloud
+      logo: "images/gcp.webp"
+      highlights:
+        - text: "Great Expertise"
+          icon:
+            provider: feather
+            id: "book"
+        - text: "5 Years of Experience"
+          icon:
+            provider: feather
+            id: "clock"
+        - text: "Production Experience"
+          icon:
+            provider: feather
+            id: "briefcase"

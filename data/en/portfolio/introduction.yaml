@@ -13,26 +13,26 @@ data:
     I am a passionate Software Engineer with around 5 years of working experience. Ex-pertise with Kubernetes, Docker and other cloud native technologies. Work mainly with GO but interested in learning other languages based on neces- sity. Leading Stash project which is a disaster recovery tool for Kubernetes native applications at AppsCode. One of the major contributor of KubeDB, an operator for running production grade databases in Kubernetes. Experi- enced with building an event-based Machine Learning pipeline using Python, RabbitMQ and Docker Compose.
   resume: "files/resume.pdf"
   socialLinks:
-  - name: Github
-    icon:
-      provider: feather
-      id: "github"
-    url: "https://www.github.com/hossainemruz"
+    - name: Github
+      icon:
+        provider: feather
+        id: "github"
+      url: "https://www.github.com/hossainemruz"
 
-  - name: LinkedIn
-    icon:
-      provider: feather
-      id: "linkedin"
-    url: "https://www.linkedin.com/in/hossainemruz/"
+    - name: LinkedIn
+      icon:
+        provider: feather
+        id: "linkedin"
+      url: "https://www.linkedin.com/in/hossainemruz/"
 
-  - name: Twitter
-    icon:
-      provider: feather
-      id: "twitter"
-    url: "https://x.com/Emruz_Hossain"
+    - name: Twitter
+      icon:
+        provider: feather
+        id: "twitter"
+      url: "https://x.com/Emruz_Hossain"
 
-  - name: Facebook
-    icon:
-      provider: feather
-      id: "facebook"
-    url: "https://www.facebook.com/imruz.hossain"
+    - name: Facebook
+      icon:
+        provider: feather
+        id: "facebook"
+      url: "https://www.facebook.com/imruz.hossain"

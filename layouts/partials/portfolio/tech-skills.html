@@ -1,51 +1,58 @@
-<section class="text-gray-600 body-font">
-    <div class="container px-5 py-10 mx-auto">
-      <div class="flex flex-col text-center w-full mb-10">
-        <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900">Technical Skills</h1>
+{{ with .data }}
+  <section class="body-font text-gray-600">
+    <div class="container mx-auto px-5 py-10">
+      <div class="mb-10 flex w-full flex-col text-center">
+        <h1 class="title-font text-2xl font-medium text-gray-900 sm:text-3xl">
+          Technical Skills
+        </h1>
       </div>
-      <div class="pb-3 flex flex-wrap flex-col justify-center md:flex-row lg:justify-start -m-4">
-        {{ range $id:=(seq 10)}}
-        <div class="p-3 md:w-1/2 lg:w-1/4">
-          <div class="flex rounded-lg h-full bg-slate-100 p-4 flex-col hover:shadow-sm hover:bg-sky-100" onclick="toggleModal('skill-details-{{$id}}')">
-            <div class="flex items-center flex-col mb-1">
-              <div class="w-16 h-16 inline-flex items-center justify-center rounded-full bg-indigo-100 text-white flex-shrink-0">
-                {{ $image := resources.Get "images/kubernetes.svg"}}
-                <img class="object-cover object-center rounded w-10 h-10 bg-slate-200" alt="hero" src="{{$image.RelPermalink}}">
+      <div
+        class="-m-4 flex flex-col flex-wrap justify-center pb-3 md:flex-row lg:justify-start"
+      >
+        {{ range $id, $skill:= .skills }}
+          <div class="p-3 md:w-1/2 lg:w-1/4">
+            <div
+              class="flex h-full flex-col rounded-lg bg-slate-100 p-4 hover:bg-sky-100 hover:shadow-sm"
+              onclick="toggleModal('skill-details-{{ $id }}')"
+            >
+              <div class="flex items-center">
+                <div
+                  class="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-indigo-100 text-white"
+                >
+                  {{ $image := resources.Get $skill.logo }}
+                  <img
+                    class="h-8 w-8 rounded object-cover object-center"
+                    alt="hero"
+                    src="{{ $image.RelPermalink }}"
+                  />
+                </div>
+                <h2 class="title-font pl-1 text-2xl font-medium text-gray-900">
+                  {{ $skill.name }}
+                </h2>
+                <i
+                  data-feather="external-link"
+                  class="mb-auto ml-auto h-4 w-4"
+                ></i>
               </div>
-              <h2 class="text-gray-900 text-2xl title-font font-medium">Kubernetes</h2>
-              <h3>5 Years of Experience</h3>
-              <h3>Level: Expert</h3>
-              <div class="inline-flex align-baseline">
-                <i data-feather="check-circle" class="w-4 h-4 text-green-500 m-auto mr-1"></i>
-                <h3>Production Experience</h3>
+              <div class="mt-1 flex flex-col">
+                {{ range $highlight := $skill.highlights }}
+                  <div class="flex items-center">
+                    <i
+                      data-feather="{{ $highlight.icon.id }}"
+                      class="h-4 w-4"
+                    ></i>
+                    <h3 class="pl-1">{{ $highlight.text }}</h3>
+                  </div>
+                {{ end }}
+
               </div>
-              <a class="mt-3 text-indigo-500 inline-flex items-center">Details
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                  <path d="M5 12h14M12 5l7 7-7 7"></path>
-                </svg>
-              </a>
             </div>
           </div>
-        </div>
-        {{ end }}
-      </div>
-      <div class="pt-3 flex flex-wrap flex-col justify-center md:flex-row lg:justify-start -m-4">
-        {{ range (seq 8)}}
-        <div class="p-3">
-          <div class="flex rounded-lg h-full border p-3 flex-col hover:shadow-sm hover:bg-sky-100">
-            <div class="flex items-center flex-col">
-              <div class="inline-flex items-baseline">
-                <h5 class="text-gray-900 text-normal title-font font-medium">Disaster Recovery</h5>
-                <span class="ml-2 mr-2">|</span>
-                <span class="text-sm">2 Years</span>
-              </div>
-            </div>
-          </div>
-        </div>
         {{ end }}
       </div>
     </div>
     {{ range $id := seq 10 }}
-      {{ partial "components/modals/tech-skill-details.html" $id }}
+      {{ partial "components/modals/tech-skill-details.html" (sub $id 1) }}
     {{ end }}
-</section>
+  </section>
+{{ end }}

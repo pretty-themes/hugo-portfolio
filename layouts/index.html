@@ -1,10 +1,18 @@
 {{ define "main" }}
+  {{ $sections:= site.Data.portfolio }}
+  {{ if (index site.Data site.Language.Lang).portfolio }}
+    {{ $sections = (index site.Data site.Language.Lang).portfolio }}
+  {{ end }}
 
-{{ partial "portfolio/introduction.html" . }}
+  {{ range sort $sections "metadata.weight" }}
+    {{ if .section.template }}
+      {{- partial .section.template . -}}
+    {{ else }}
+      {{- partial (printf "portfolio/%s.html" (replace (lower .metadata.id) " " "-")) . -}}
+    {{ end }}
+  {{ end }}
 
-{{ partial "portfolio/tech-skills.html" . }}
+  {{ partial "portfolio/experiences.html" . }}
 
-{{ partial "portfolio/experiences.html" . }}
-
-{{ partial "portfolio/recent-posts.html" . }}
+  {{ partial "portfolio/recent-posts.html" . }}
 {{ end }}

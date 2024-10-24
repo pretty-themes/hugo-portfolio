@@ -1,8 +1,4 @@
-{{ $section:= site.Data.Portfolio.introduction }}
-{{ if (index site.Data site.Language.Lang).portfolio.introduction }}
-  {{ $section = (index site.Data site.Language.Lang).portfolio.introduction }}
-{{ end }}
-{{ with $section.data }}
+{{ with .data }}
   <section class="body-font w-full bg-cyan-100 text-gray-600">
     <div
       class="container flex flex-col flex-wrap items-center px-2 pb-5 pt-20 align-baseline lg:mx-auto lg:flex-row lg:px-5 lg:py-40"
