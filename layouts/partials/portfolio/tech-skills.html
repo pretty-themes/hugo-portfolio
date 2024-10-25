@@ -13,7 +13,9 @@
           <div class="p-3 md:w-1/2 lg:w-1/4">
             <div
               class="flex h-full flex-col rounded-lg bg-slate-100 p-4 hover:bg-sky-100 hover:shadow-sm"
-              onclick="toggleModal('skill-details-{{ $id }}')"
+              {{ if $skill.details }}
+                onclick="toggleModal('skill-details-{{ $skill.name | urlize }}')"
+              {{ end }}
             >
               <div class="flex items-center">
                 <div
@@ -29,10 +31,12 @@
                 <h2 class="title-font pl-1 text-2xl font-medium text-gray-900">
                   {{ $skill.name }}
                 </h2>
-                <i
-                  data-feather="external-link"
-                  class="mb-auto ml-auto h-4 w-4"
-                ></i>
+                {{ if $skill.details }}
+                  <i
+                    data-feather="external-link"
+                    class="mb-auto ml-auto h-4 w-4 text-slate-500"
+                  ></i>
+                {{ end }}
               </div>
               <div class="mt-1 flex flex-col">
                 {{ range $highlight := $skill.highlights }}
@@ -51,8 +55,10 @@
         {{ end }}
       </div>
     </div>
-    {{ range $id := seq 10 }}
-      {{ partial "components/modals/tech-skill-details.html" (sub $id 1) }}
+    {{ range $id,$skill := .skills }}
+      {{ if $skill.details }}
+        {{ partial "components/modals/tech-skill-details.html" (dict "id" $id "skill" $skill) }}
+      {{ end }}
     {{ end }}
   </section>
 {{ end }}
