@@ -8,6 +8,7 @@ data:
   - company:
       name: AppsCode Inc.
       url: https://appscode.com
+      logo: images/appscode.png
     positions:
     - name: Lead Software Engineer
       start: Jan 2021

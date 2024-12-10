@@ -11,14 +11,14 @@
           <div
             class="item-center mx-auto inline-flex h-16 w-16 flex-shrink-0 justify-center rounded-full bg-cyan-100"
           >
-            {{ $image := resources.Get .icon }}
+            {{ $image := resources.Get .institution.logo }}
             <img
-              class="m-auto h-10 w-10 rounded object-cover object-center"
+              class="m-auto h-12 w-12 rounded object-cover object-center"
               alt="logo"
               src="{{ $image.RelPermalink }}"
             />
           </div>
-          <p class="text-xl w-full mx-auto text-center">{{.degree}}</p>
+          <p class="text-xl w-full mx-auto text-center font-medium">{{.degree}}</p>
           <a href="{{.institution.url}}" class="text-lg mx-auto text-center text-cyan-600">{{.institution.name}}</a>
           <p class="w-full mx-auto text-center">{{.start}} - {{.end}}</p>
           {{ with .CGPA }}

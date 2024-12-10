@@ -30,8 +30,12 @@
                 <ul class="w-full">
                   <h3 class="text-xl">{{.name}}</h3>
                   <div class="inline-flex justify-between w-full pb-2">
-                    <a class="text-md text-blue-600" href="{{$company.url}}">{{$company.name}}</a>
-                    <h5 class="text-sm subtitle text-gray-400">{{.start}} -  {{.end}} ({{.duration}})</h5>
+                    {{ $logo := resources.Get $company.logo }}
+                    <a class="text-md text-blue-600 inline-flex pt-1" href="{{$company.url}}">
+                      <img src="{{$logo.RelPermalink}}" alt="company logo" class="h-6 w-6">
+                      <span class="ml-2">{{$company.name}}</span>
+                    </a>
+                    <h5 class="text-sm subtitle text-gray-400 pt-1">{{.start}} -  {{.end}} ({{.duration}})</h5>
                   </div>
                   <p>{{.summary}}</p>
                   <h5 class="text-md italic subtitle pt-2">My Contributions</h5>

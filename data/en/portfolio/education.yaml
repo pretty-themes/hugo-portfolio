@@ -7,15 +7,15 @@ data:
   - institution:
       name: Chittagong University of Engineering and Technology
       url: https://www.cuet.ac.bd/
+      logo: images/cuet-logo.png
     degree: B.Sc. in Computer Science and Engineering
     start: March 2013
     end: November 2017
     CGPA: 3.28 out of 4
-    icon: images/graduation-cap.svg
   - institution:
       name: Sristy College of Tangail
       url: https://sristy.edu.bd/
+      logo: images/sristy-college-logo.png
     degree: Higher Secondary Certificate (HSC)
     start: July 2010
     end: June 2012
-    icon: images/graduation-cap.svg
