@@ -1,0 +1,46 @@
+metadata:
+  name: Projects
+  id: projects
+  enabled: true
+  weight: 5
+data:
+  categories:
+    - name: Kubernetes
+      id: kubernetes
+    - name: Go
+      id: go
+    - name: Database
+      id: database
+    - name: Monitoring
+      id: monitoring
+    - name: Backup
+      id: backup
+  projects:
+    - name: Stash
+      url: https://stash.run
+      logo: images/stash.png
+      summary: Stash is a disaster recovery solution for Kubernetes native applications. It can backup and restore your applications and their persistent volumes. If you are running stateful applications in Kubernetes, Stash is for you.
+      contributions:
+        - Lead Stash (a disaster recovery solution for Kubernetes) team.
+        - Re-architected Stash to make it extensible via plugins that made more than 10’s different databases and apps backup possible.
+        - Mentored KubeDB (a database management operator for Kubernetes) team.
+        - Re-architected cluster import flow for ByteBuilders and added dynamic feature controller.
+        - Designed UX for ByteBuilders database management console. It simplifies database management in Kubernetes.
+        - Coordinated with hundreds of users to understand their requirements and improved product accordingly.
+      tags: [Kubernetes, Go, Backup, Disaster Recovery]
+    - name: KubeDB
+      url: https://kubedb.com
+      logo: images/kubedb.png
+      summary: KubeDB is a database management operator for Kubernetes. It provides a simple and consistent way to provision and manage production grade databases in Kubernetes.
+      contributions:
+        - Introduced auto-backup in Stash that enabled support for pre-configured policy-based backup.
+        - Added monitoring support in Stash. It enables alerting based on backup and restore metrics.
+        - Integrated Kubernetes native CSI VolumeSnapshot support in Stash.
+        - Added scheduled backup support in KubeDB managed databases. It makes them prepared for a disaster scenario.
+        - Implemented support for customizing database configurations using custom config file that simplified managing database configurations.
+        - Fixed few critical bugs in MySQL, PostgreSQL, and Elasticsearch operator.
+        - Represented Stash in various online conference.
+        - Improved existing documentation and added new docs. It has improved user experiences.
+        - Supported users in Slack, Email, and GitHub issues to solve their issues and collect feedback.
+      tags:
+        [Kubernetes, Go, Database, Operator, PostgreSQL, MySQL, Elasticsearch]

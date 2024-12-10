@@ -23,9 +23,9 @@ data:
       details:
         summary: I have been working with Kubernetes for the last 5 years. I have experience in setting up, managing and maintaining Kubernetes clusters. I have also worked on building operators for Kubernetes native applications.
         capabilities:
-        - Setting up Kubernetes clusters
-        - Managing and maintaining Kubernetes clusters
-        - Building operators for Kubernetes native applications
+          - Setting up Kubernetes clusters
+          - Managing and maintaining Kubernetes clusters
+          - Building operators for Kubernetes native applications
     - name: Go
       logo: "images/golang.svg"
       highlights:
