@@ -12,7 +12,7 @@
           <form action="" class="mt-2">
             {{ range .data.categories }}
               <li>
-                <input type="checkbox" id="{{ .id }}" value="{{ .id }}" />
+                <input type="checkbox" id="{{ .id }}" value="{{ .id }}" class="category-checkbox" />
                 <label for="{{ .id }}" class="text-medium font-normal"
                   >{{ .name }}</label
                 >
@@ -22,9 +22,9 @@
         </ul>
       </aside>
     </div>
-    <div class="ml-4 grow pl-4">
+    <div class="ml-4 grow pl-4" id="projects-container">
       {{ range .data.projects }}
-        <div class="my-2 flex w-full basis-3/4 flex-col rounded border p-4">
+        <div class="my-2 flex w-full basis-3/4 flex-col rounded border p-4 project-item" data-tags="{{ range .tags }}{{ lower . }} {{ end }}">
           <a href="{{ .url }}" class="inline-flex text-cyan-600">
             <h1 class="text-xl font-semibold">{{ .name }}</h1>
             <i
@@ -54,3 +54,23 @@
     </div>
   </div>
 </section>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const checkboxes = document.querySelectorAll('.category-checkbox');
+    const projects = document.querySelectorAll('.project-item');
+
+    checkboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', function () {
+        const selectedCategories = Array.from(checkboxes)
+          .filter(checkbox => checkbox.checked)
+          .map(checkbox => checkbox.value);
+
+        projects.forEach(project => {
+          const projectTags = project.getAttribute('data-tags').split(' ');
+          const isVisible = selectedCategories.length === 0 || selectedCategories.some(category => projectTags.includes(category));
+          project.style.display = isVisible ? 'flex' : 'none';
+        });
+      });
+    });
+  });
+</script>

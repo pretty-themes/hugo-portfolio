@@ -44,3 +44,27 @@ data:
         - Supported users in Slack, Email, and GitHub issues to solve their issues and collect feedback.
       tags:
         [Kubernetes, Go, Database, Operator, PostgreSQL, MySQL, Elasticsearch]
+    - name: ByteBuilders
+      url: https://bytebuilders.dev
+      logo: images/bytebuilders.png
+      summary: ByteBuilders is a platform to build, deploy, and manage applications in Kubernetes. It provides a simple and consistent way to manage applications in Kubernetes.
+      contributions:
+        - Designed and developed ByteBuilders platform.
+        - Added support for managing databases in Kubernetes.
+        - Added support for managing applications in Kubernetes.
+        - Added support for managing backups in Kubernetes.
+        - Added support for managing monitoring in Kubernetes.
+        - Added support for managing logs in Kubernetes.
+        - Added support for managing alerts in Kubernetes.
+        - Added support for managing users and roles in Kubernetes.
+      tags: [Kubernetes, Go, Database, Monitoring, Backup, Logs, Alerts]
+    - name: Toha
+      url: https://hugo-toha.github.io
+      logo: images/toha.png
+      summary: Toha is a simple and elegant Hugo theme. It is a single page theme with a clean and minimal design. It is suitable for personal blogs, portfolios, and project showcases.
+      contributions:
+        - Designed and developed Toha Hugo theme.
+        - Added support for dark mode.
+        - Added support for custom CSS and JS.
+        - Added support for customizing the theme using Hugo config
+      tags: [Hugo, Theme, CSS,HTML, JS]
