@@ -11,7 +11,7 @@
       {{ range $id, $skill:= .data.skills }}
         <div class="p-3 md:w-1/2 lg:w-1/4">
           <div
-            class="flex h-full flex-col rounded-lg bg-slate-100 p-4 hover:bg-sky-100 hover:shadow-sm"
+            class="flex h-full flex-col rounded-lg bg-slate-100 p-4 hover:bg-sky-100 hover:shadow-xs"
             {{ if $skill.details }}
               onclick="toggleModal('skill-details-{{ $skill.name | urlize }}')"
             {{ end }}
@@ -22,7 +22,7 @@
               >
                 {{ $image := resources.Get $skill.logo }}
                 <img
-                  class="h-8 w-8 rounded object-cover object-center"
+                  class="h-8 w-8 rounded-sm object-cover object-center"
                   alt="hero"
                   src="{{ $image.RelPermalink }}"
                 />

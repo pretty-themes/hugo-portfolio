@@ -24,7 +24,7 @@
     </div>
     <div class="ml-4 grow pl-4" id="projects-container">
       {{ range .data.projects }}
-        <div class="my-2 flex w-full basis-3/4 flex-col rounded border p-4 project-item" data-tags="{{ range .tags }}{{ lower . }} {{ end }}">
+        <div class="my-2 flex w-full basis-3/4 flex-col rounded-sm border p-4 project-item" data-tags="{{ range .tags }}{{ lower . }} {{ end }}">
           <a href="{{ .url }}" class="inline-flex text-cyan-600">
             <h1 class="text-xl font-semibold">{{ .name }}</h1>
             <i
@@ -43,7 +43,7 @@
             {{ range .tags }}
               <button
                 type="button"
-                class="mx-1 mt-2 rounded bg-cyan-50 px-2 py-1 text-sm text-cyan-700 hover:bg-cyan-700 hover:text-slate-50"
+                class="mx-1 mt-2 rounded-sm bg-cyan-50 px-2 py-1 text-sm text-cyan-700 hover:bg-cyan-700 hover:text-slate-50"
               >
                 {{ . }}
               </button>

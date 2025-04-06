@@ -1,7 +1,10 @@
 <!doctype html>
 <html lang="{{ .Language.Lang }}" class="scroll-pt-16 scroll-smooth">
   <head>
-    {{ partial "head.html" . }}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Site.Title }}</title>
+    {{ partialCached "css.html" . }}
   </head>
   <body class="overflow-x-hidden bg-white">
     {{/* ============== Header block ============= */}}

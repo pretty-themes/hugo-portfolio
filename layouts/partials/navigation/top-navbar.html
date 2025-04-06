@@ -82,13 +82,13 @@
         document.documentElement.scrollTop > 20
       ) {
         let nav = document.getElementById("top-navbar");
-        if (!nav.classList.contains("shadow")) {
-          nav.classList.add("shadow");
+        if (!nav.classList.contains("shadow-sm")) {
+          nav.classList.add("shadow-sm");
         }
       } else {
         let nav = document.getElementById("top-navbar");
-        if (nav.classList.contains("shadow")) {
-          nav.classList.remove("shadow");
+        if (nav.classList.contains("shadow-sm")) {
+          nav.classList.remove("shadow-sm");
         }
       }
     }

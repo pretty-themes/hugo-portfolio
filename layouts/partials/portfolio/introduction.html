@@ -7,7 +7,7 @@
         <div class="flex flex-col items-center">
           {{ $image := resources.Get .image }}
           <img
-            class="mb-5 h-64 w-64 rounded bg-slate-100 object-cover object-center"
+            class="mb-5 h-64 w-64 rounded-sm bg-slate-100 object-cover object-center"
             alt="hero"
             src="{{ $image.RelPermalink }}"
           />
@@ -40,7 +40,7 @@
           >
             {{ range .socialLinks }}
               <a
-                class="ml-1 mr-1 flex h-10 w-10 justify-center rounded bg-gray-600 text-gray-200 hover:bg-cyan-600"
+                class="ml-1 mr-1 flex h-10 w-10 justify-center rounded-sm bg-gray-600 text-gray-200 hover:bg-cyan-600"
                 href="{{ .url }}"
                 target="_blank"
                 rel="noopener"
@@ -51,7 +51,7 @@
           </div>
           {{ if .resume }}
             <a
-              class="mb-1 ml-1 mr-1 mt-1 flex h-10 w-auto justify-center rounded bg-gray-600 p-2 text-gray-200 hover:bg-cyan-600"
+              class="mb-1 ml-1 mr-1 mt-1 flex h-10 w-auto justify-center rounded-sm bg-gray-600 p-2 text-gray-200 hover:bg-cyan-600"
               href="{{ .resume }}"
               target="_blank"
               >My Resume</a
