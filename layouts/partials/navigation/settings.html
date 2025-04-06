@@ -1,8 +1,8 @@
-{{$theme_selector:= slice "border" "h-16" "flex" "flex-col" "item-baseline" "p-2" "rounded-sm" "cursor-pointer"}}
+{{$theme_selector:= slice "border border-gray-200" "h-16" "flex" "flex-col" "item-baseline" "p-2" "rounded-sm" "cursor-pointer"}}
 {{$theme_selector = $theme_selector | append "hover:bg-cyan-500" "hover:text-white"}}
 {{$theme_selector = $theme_selector | append "peer-checked:z-10" "peer-checked:bg-cyan-500" "peer-checked:text-white"}}
 
-{{$accent_color:= slice "border" "h-8" "w-8" "mx-1" "flex" "flex-col" "item-baseline" "p-2" "rounded-full" "cursor-pointer"}}
+{{$accent_color:= slice "border border-gray-200" "h-8" "w-8" "mx-1" "flex" "flex-col" "item-baseline" "p-2" "rounded-full" "cursor-pointer"}}
 {{$accent_color = $accent_color | append "hover:bg-cyan-500" "hover:text-white"}}
 {{$accent_color = $accent_color | append "peer-checked:z-10" "peer-checked:ring-2" "peer-checked:ring-cyan-500"}}
 
@@ -11,7 +11,7 @@
 {{$language_selector = $language_selector | append "hover:bg-cyan-500" "hover:text-white"}}
 {{$language_selector = $language_selector | append "peer-checked:z-10" "peer-checked:bg-cyan-500" "peer-checked:text-white"}}
 
-<div class="fixed inset-0 bg-cyan-50 bg-opacity-0 hidden transition-all duration-300 ease-out z-10" id="opaque-filter"></div>
+<div class="fixed inset-0 bg-cyan-50 opacity-0 hidden transition-all duration-300 ease-out z-10" id="opaque-filter"></div>
 
 <aside class="fixed top-16 min-h-screen bg-white shadow-xl w-96 px-4 py-2 z-10 transition-all duration-300 -right-128" id="setting-panel">
     <div class="flex flex-col pb-4">
@@ -82,8 +82,8 @@
         let f = document.getElementById("opaque-filter");
         if (f){
             f.classList.toggle("hidden");
-            f.classList.toggle("bg-opacity-0");
-            f.classList.toggle("bg-opacity-50");
+            f.classList.toggle("opacity-0");
+            f.classList.toggle("opacity-50");
         }
     }
 </script>

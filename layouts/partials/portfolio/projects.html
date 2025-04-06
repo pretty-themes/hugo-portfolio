@@ -6,7 +6,7 @@
   </div>
   <div class="container mx-auto flex px-5 py-10">
     <div class="basis-1/4">
-      <aside class="sticky top-20 ml-auto w-72 border-r px-4 py-2">
+      <aside class="sticky top-20 ml-auto w-72 border-r border-gray-200 px-4 py-2">
         <ul class="text-lg font-bold" id="selectors">
           <h1 class="text-xl font-bold">Categories</h1>
           <form action="" class="mt-2">
@@ -24,7 +24,7 @@
     </div>
     <div class="ml-4 grow pl-4" id="projects-container">
       {{ range .data.projects }}
-        <div class="my-2 flex w-full basis-3/4 flex-col rounded-sm border p-4 project-item" data-tags="{{ range .tags }}{{ lower . }} {{ end }}">
+        <div class="my-2 flex w-full basis-3/4 flex-col rounded-sm border  border-gray-200 p-4 project-item" data-tags="{{ range .tags }}{{ lower . }} {{ end }}">
           <a href="{{ .url }}" class="inline-flex text-cyan-600">
             <h1 class="text-xl font-semibold">{{ .name }}</h1>
             <i
