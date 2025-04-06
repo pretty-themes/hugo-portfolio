@@ -10,12 +10,13 @@
     >
       {{ range $id, $skill:= .data.skills }}
         <div class="p-3 md:w-1/2 lg:w-1/4">
-          <div
-            class="flex h-full flex-col rounded-lg bg-slate-100 p-4 hover:bg-sky-100 hover:shadow-xs"
-            {{ if $skill.details }}
-              onclick="toggleModal('skill-details-{{ $skill.name | urlize }}')"
-            {{ end }}
-          >
+          {{ $classes := slice "flex h-full flex-col rounded-lg bg-slate-100 p-4 hover:bg-sky-100 hover:shadow-xs" }}
+          {{ $onclick := ""}}
+          {{ if $skill.details }}
+            {{ $classes = $classes | append "cursor-pointer" }}
+            {{ $onclick = printf "toggleModal('skill-details-%s')" ($skill.name | urlize ) }}
+          {{ end }}
+          <div class='{{delimit $classes " "}}' onclick="{{ $onclick | safeJS }}">
             <div class="flex items-center">
               <div
                 class="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-indigo-100 text-white"
