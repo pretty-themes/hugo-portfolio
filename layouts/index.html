@@ -11,6 +11,4 @@
       {{- partial (printf "portfolio/%s.html" (replace (lower .metadata.id) " " "-")) . -}}
     {{ end }}
   {{ end }}
-
-  {{ partial "portfolio/recent-posts.html" . }}
 {{ end }}
