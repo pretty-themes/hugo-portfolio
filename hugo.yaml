@@ -46,9 +46,24 @@ languages:
 params:
   topNavbar:
     brand:
-      icon: images/gopher.png
+      logo: images/gopher.png
       text: EMRUZ
     search:
       enabled: false
     settings:
       enabled: false
+  footer:
+    brand:
+      logo: images/gopher.png
+      text: EMRUZ
+    copyrightAuthor: "Emruz Hossain"
+    socialLinks:
+      - icon: github
+        url: "https://github.com/hossainemruz"
+      - icon: twitter
+        url: "https://x.com/Emruz_Hossain"
+      - icon: linkedin
+        url: "https://www.linkedin.com/in/hossainemruz/"
+      - icon: facebook
+        url: "https://www.facebook.com/hossainemruz"
+    

@@ -12,7 +12,7 @@
 
       {{ with site.Params.topNavbar }}
         <a href="{{ site.BaseURL }}" class="flex items-center">
-          {{ $brandIcon := resources.Get .brand.icon }}
+          {{ $brandIcon := resources.Get .brand.logo }}
           <img
             class="d-inline-flex h-10"
             src="{{ $brandIcon.RelPermalink }}"
