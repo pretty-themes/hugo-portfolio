@@ -5,30 +5,59 @@
 @plugin "@tailwindcss/typography";
 
 
-@theme{
+@theme inline {
+  /* Theme variables */
+  --color-accent: var(--accent);
+  --color-landing: var(--landing);
+  --color-landing-text: var(--landing-text);
+  --color-landing-muted-text: var(--landing-muted-text);
+  --color-button-background: var(--button-background);
+  --color-button-text: var(--button-text);
+}
 
+/*Set theme variables for differnt themes*/
+@layer base {
+
+  /* Default styles */
+  :root {
+    --accent: oklch(60.9% 0.126 221.723);
+    --landing: oklch(0.391 0.09 240.876);
+    --landing-text: oklch(0.923 0.003 48.717);
+    --landing-muted-text: oklch(0.707 0.022 261.325);
+    --button-background:oklch(0.208 0.042 265.755);
+    --button-text: oklch(86.9% 0.022 252.894);
+  }
+
+  /* Dark mode styles */
+  .dark {
+    /*TODO: Set dark theme variables*/
+  }
 }
 
 
-@utility nav-active{
+@utility nav-active {
   @apply text-white bg-cyan-500 py-1 px-2 rounded-sm duration-300;
-  &:hover{
+
+  &:hover {
     @apply text-white;
   }
-  &>a{
+
+  &>a {
     @apply text-white;
   }
-  &>ul{
+
+  &>ul {
     @apply block max-w-full pl-2 duration-100;
     @apply border-l border-cyan-500;
   }
 }
 
-@utility child-active{
-  &>a{
+@utility child-active {
+  &>a {
     @apply text-cyan-500;
   }
-  &>ul{
+
+  &>ul {
     @apply block max-w-full pl-2 duration-100;
     @apply border-l border-cyan-500;
   }
