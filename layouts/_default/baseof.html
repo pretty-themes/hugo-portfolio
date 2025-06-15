@@ -6,7 +6,7 @@
     <title>{{ .Site.Title }}</title>
     {{ partialCached "css.html" . }}
   </head>
-  <body class="overflow-x-hidden bg-white">
+  <body class="overflow-x-hidden bg-primary">
     {{/* ============== Header block ============= */}}
     {{ block "header" . }}
       {{ partial "navigation/top-navbar.html" . }}

@@ -26,13 +26,13 @@
                 src="{{ $image.RelPermalink }}"
               />
             </div>
-            <h2 class="title-font ml-2 text-2xl font-medium text-gray-900">
+            <h2 class="title-font ml-2 text-2xl font-medium text-title-text">
               {{ .skill.name }}
             </h2>
           </div>
         </div>
-        <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4">
-          <p class="text-sm text-gray-500">
+        <div class="bg-white px-4 pb-4 pt-5 sm:p-6 sm:pb-4 text-muted-text">
+          <p class="text-sm">
             {{ .skill.details.summary | markdownify }}
           </p>
           {{ if .skill.details.capabilities }}

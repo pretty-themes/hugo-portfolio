@@ -1,7 +1,7 @@
-<section class="body-font text-gray-600">
+<section class="body-font">
   <div class="container mx-auto px-5 py-10">
     <div class="mb-10 flex w-full flex-col text-center">
-      <h1 class="title-font text-2xl font-medium text-gray-900 sm:text-3xl">
+      <h1 class="title-font text-2xl font-medium text-title-text sm:text-3xl">
         {{ .metadata.name }}
       </h1>
     </div>
@@ -10,7 +10,7 @@
     >
       {{ range $id, $skill:= .data.skills }}
         <div class="p-3 md:w-1/2 lg:w-1/4">
-          {{ $classes := slice "flex h-full flex-col rounded-lg bg-slate-100 p-4 hover:bg-sky-100 hover:shadow-xs" }}
+          {{ $classes := slice "group flex h-full flex-col rounded-lg bg-filled-card-background p-4 hover:bg-accent hover:shadow-xs" }}
           {{ $onclick := ""}}
           {{ if $skill.details }}
             {{ $classes = $classes | append "cursor-pointer" }}
@@ -19,7 +19,7 @@
           <div class='{{delimit $classes " "}}' onclick="{{ $onclick | safeJS }}">
             <div class="flex items-center">
               <div
-                class="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-indigo-100 text-white"
+                class="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-indigo-100"
               >
                 {{ $image := resources.Get $skill.logo }}
                 <img
@@ -28,17 +28,17 @@
                   src="{{ $image.RelPermalink }}"
                 />
               </div>
-              <h2 class="title-font pl-1 text-2xl font-medium text-gray-900">
+              <h2 class="title-font pl-1 text-2xl font-medium text-title-text group-hover:text-on-accent-bg">
                 {{ $skill.name }}
               </h2>
               {{ if $skill.details }}
                 <i
                   data-feather="external-link"
-                  class="mb-auto ml-auto h-4 w-4 text-slate-500"
+                  class="mb-auto ml-auto h-4 w-4 text-filled-card-text group-hover:text-on-accent-bg"
                 ></i>
               {{ end }}
             </div>
-            <div class="mt-1 flex flex-col">
+            <div class="mt-1 flex flex-col text-filled-card-text group-hover:text-on-accent-bg">
               {{ range $highlight := $skill.highlights }}
                 <div class="flex items-center">
                   <i

@@ -8,11 +8,22 @@
 @theme inline {
   /* Theme variables */
   --color-accent: var(--accent);
+  --color-primary: var(--primary);
+  /* Landing section colors */
   --color-landing: var(--landing);
   --color-landing-text: var(--landing-text);
   --color-landing-muted-text: var(--landing-muted-text);
+  /* Button colors */
   --color-button-background: var(--button-background);
   --color-button-text: var(--button-text);
+  /* Text colors */
+  --color-normal-text: var(--normal-text);
+  --color-title-text: var(--title-text);
+  --color-muted-text: var(--muted-text);
+  --color-on-accent-bg: var(--on-accent-bg);
+  /* Card colors */
+  --color-filled-card-background: var(--filled-card-background);
+  --color-filled-card-text: var(--filled-card-text);
 }
 
 /*Set theme variables for differnt themes*/
@@ -21,11 +32,23 @@
   /* Default styles */
   :root {
     --accent: oklch(60.9% 0.126 221.723);
+    --primary: oklch(98.5% 0 0);
+    /* Landing section colors */
     --landing: oklch(0.391 0.09 240.876);
     --landing-text: oklch(0.923 0.003 48.717);
     --landing-muted-text: oklch(0.707 0.022 261.325);
-    --button-background:oklch(0.208 0.042 265.755);
+    /* Button  colors */
+    --button-background: oklch(0.208 0.042 265.755);
     --button-text: oklch(86.9% 0.022 252.894);
+    /* Text colors */
+    --normal-text: oklch(37.2% 0.044 257.287);
+    --title-text: oklch(21% 0.034 264.665);
+    --muted-text: oklch(44.6% 0.03 256.802);
+    /* slate-900 */
+    --on-accent-bg: oklch(0.923 0.003 48.717);
+    /* Card colors */
+    --filled-card-background: oklch(92.9% 0.013 255.508);
+    --filled-card-text: oklch(44.6% 0.03 256.802);
   }
 
   /* Dark mode styles */
