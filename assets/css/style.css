@@ -26,6 +26,7 @@
   --color-filled-card-background: var(--filled-card-background);
   --color-filled-card-text: var(--filled-card-text);
   --color-border-color: var(--border-color);
+  --color-accent-tint: color-mix(in oklab, var(--accent) 30%, transparent);
 }
 
 /*Set theme variables for differnt themes*/
@@ -47,7 +48,6 @@
     --title-text: oklch(21% 0.034 264.665);
     --muted-text: oklch(44.6% 0.03 256.802);
     --link-text: oklch(54.6% 0.245 262.881); /* blue-600 */
-    /* slate-900 */
     --on-accent-bg: oklch(0.923 0.003 48.717);
     /* Card colors */
     --filled-card-background: oklch(92.9% 0.013 255.508);
