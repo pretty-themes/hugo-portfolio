@@ -20,13 +20,13 @@
   --color-normal-text: var(--normal-text);
   --color-title-text: var(--title-text);
   --color-muted-text: var(--muted-text);
-  --color-link-text: var(--link-text);
+  --color-link-color: var(--link-color);
   --color-on-accent-bg: var(--on-accent-bg);
   /* Card colors */
   --color-filled-card-background: var(--filled-card-background);
   --color-filled-card-text: var(--filled-card-text);
   --color-border-color: var(--border-color);
-  --color-accent-tint: color-mix(in oklab, var(--accent) 30%, transparent);
+  --color-tinted-background: var(--tinted-background);
 }
 
 /*Set theme variables for differnt themes*/
@@ -34,7 +34,7 @@
 
   /* Default styles */
   :root {
-    --accent: oklch(60.9% 0.126 221.723);
+    --accent: oklch(58.8% 0.158 241.966); /* sky-600 */
     --primary: oklch(98.5% 0 0);
     /* Landing section colors */
     --landing: oklch(0.391 0.09 240.876);
@@ -44,15 +44,16 @@
     --button-background: oklch(0.208 0.042 265.755);
     --button-text: oklch(86.9% 0.022 252.894);
     /* Text colors */
-    --normal-text: oklch(37.2% 0.044 257.287);
+    --normal-text: oklch(44.6% 0.03 256.802); /* gray-600 */
     --title-text: oklch(21% 0.034 264.665);
     --muted-text: oklch(44.6% 0.03 256.802);
-    --link-text: oklch(54.6% 0.245 262.881); /* blue-600 */
+    --link-color: oklch(54.6% 0.245 262.881); /* blue-600 */
     --on-accent-bg: oklch(0.923 0.003 48.717);
     /* Card colors */
     --filled-card-background: oklch(92.9% 0.013 255.508);
     --filled-card-text: oklch(44.6% 0.03 256.802);
     --border-color: oklch(92.8% 0.006 264.531);
+    --tinted-background: oklch(95.1% 0.026 236.824); /* sky-100 */
   }
 
   /* Dark mode styles */

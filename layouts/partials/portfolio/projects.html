@@ -1,12 +1,12 @@
-<section class="body-font text-gray-600">
+<section class="body-font text-normal-text">
   <div class="mb-10 flex w-full flex-col text-center">
-    <h1 class="title-font text-2xl font-medium text-gray-900 sm:text-3xl">
+    <h1 class="title-font text-2xl font-medium text-title-text sm:text-3xl">
       {{ .metadata.name }}
     </h1>
   </div>
   <div class="container mx-auto flex px-5 py-10">
     <div class="basis-1/4">
-      <aside class="sticky top-20 ml-auto w-72 border-r border-gray-200 px-4 py-2">
+      <aside class="sticky top-20 ml-auto w-72 border-r border-border-color px-4 py-2">
         <ul class="text-lg font-bold" id="selectors">
           <h1 class="text-xl font-bold">Categories</h1>
           <form action="" class="mt-2">
@@ -24,12 +24,12 @@
     </div>
     <div class="ml-4 grow pl-4" id="projects-container">
       {{ range .data.projects }}
-        <div class="my-2 flex w-full basis-3/4 flex-col rounded-sm border  border-gray-200 p-4 project-item" data-tags="{{ range .tags }}{{ lower . }} {{ end }}">
-          <a href="{{ .url }}" class="inline-flex text-cyan-600">
+        <div class="my-2 flex w-full basis-3/4 flex-col rounded-sm border  border-border-color p-4 project-item" data-tags="{{ range .tags }}{{ lower . }} {{ end }}">
+          <a href="{{ .url }}" class="inline-flex text-title-text hover:text-link-color hover:underline">
             <h1 class="text-xl font-semibold">{{ .name }}</h1>
             <i
               data-feather="external-link"
-              class="mb-auto ml-auto h-4 w-4 text-slate-500"
+              class="mb-auto ml-auto h-4 w-4 text-link-color"
             ></i>
           </a>
           <p class="text-medium">{{ .summary }}</p>
@@ -43,7 +43,7 @@
             {{ range .tags }}
               <button
                 type="button"
-                class="mx-1 mt-2 rounded-sm bg-cyan-50 px-2 py-1 text-sm text-cyan-700 hover:bg-cyan-700 hover:text-slate-50"
+                class="mx-1 mt-2 rounded-sm bg-tinted-background px-2 py-1 text-sm text-accent font-medium hover:bg-accent hover:text-on-accent-bg"
               >
                 {{ . }}
               </button>

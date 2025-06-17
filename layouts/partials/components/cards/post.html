@@ -1,21 +1,21 @@
 <div class="p-3 md:w-1/2 lg:w-1/3 m-h-8">
-  <a class="group flex flex-col rounded-lg border border-gray-200 h-full p-4 hover:bg-cyan-500 hover:text-white hover:shadow-sm" href="{{.url}}" target="_blank" rel="noopener noreferrer">
+  <a class="group flex flex-col rounded-lg border border-border-color h-full p-4 hover:bg-accent hover:text-on-accent-bg hover:shadow-sm" href="{{.url}}" target="_blank" rel="noopener noreferrer">
     <div class="inline-flex justify-between pb-2">
-      <div class="text-sm text-gray-600 group-hover:text-white">{{.publishDate}}</div>
-      <div class="rounded-md px-2 py-1 bg-sky-100">
-        <h5 class="text-sm text-sky-600 font-medium">{{.category}}</h5>
+      <div class="text-sm text-normal-text group-hover:text-on-accent-bg">{{.publishDate}}</div>
+      <div class="rounded-md px-2 py-1 bg-tinted-background">
+        <h5 class="text-sm text-accent font-medium">{{.category}}</h5>
       </div>
     </div>
-    <h1 class="text-xl text-gray-600 font-bold pb-2 group-hover:text-white">{{.title}}</h1>
+    <h1 class="text-xl text-title-text font-medium pb-2 group-hover:text-on-accent-bg">{{.title}}</h1>
     <div class="text-justify pb-3">
       <p class="text-ellipsis overflow-hidden max-h-24">{{.summary}}</p>
     </div>
     <div class="inline-flex justify-between pb-2 mt-auto">
-      <div class="inline-flex align-baseline text-gray-600 group-hover:text-white">
+      <div class="inline-flex align-baseline text-normal-text group-hover:text-on-accent-bg">
         <i class="w-4 h-4 m-auto" data-feather="clock"></i>
         <h5 class="ml-2 text-sm m-auto">{{.readingTime}} to read</h5>
       </div>
-      <div class="inline-flex align-baseline text-cyan-600 group-hover:text-white">
+      <div class="inline-flex align-baseline text-accent group-hover:text-on-accent-bg hover:underline">
         <h5 class="text-sm m-auto">Read</h5>
         <i class="w-4 h-4 ml-2 m-auto" data-feather="arrow-right"></i>
       </div>

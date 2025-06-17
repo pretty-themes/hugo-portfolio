@@ -12,7 +12,7 @@
                     <li class="my-2 pl-2">
                         <a href="#{{urlize .name }}">
                             <h3 class="text-xl">{{.name}}</h3>
-                            <a class="text-sm text-link-text hover:underline" href="{{$company.url}}">{{$company.name}}</a>
+                            <a class="text-sm text-link-color hover:underline" href="{{$company.url}}">{{$company.name}}</a>
                             <h5 class="text-xs text-muted-text">{{.start}} -  {{.end}}</h5>
                         </a>
                     </li>
@@ -31,7 +31,7 @@
                   <h3 class="text-xl">{{.name}}</h3>
                   <div class="inline-flex justify-between w-full pb-2">
                     {{ $logo := resources.Get $company.logo }}
-                    <a class="text-md inline-flex pt-1 text-link-text hover:underline" href="{{$company.url}}">
+                    <a class="text-md inline-flex pt-1 text-link-color hover:underline" href="{{$company.url}}">
                       <img src="{{$logo.RelPermalink}}" alt="company logo" class="h-6 w-6">
                       <span class="ml-2">{{$company.name}}</span>
                     </a>
