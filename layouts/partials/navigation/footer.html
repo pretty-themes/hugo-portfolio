@@ -1,23 +1,23 @@
 {{ with site.Params.footer}}
-<footer class="text-gray-600 body-font print:hidden">
-    <div class="bg-gray-100">
+<footer class="text-normal body-font print:hidden">
+    <div class="bg-landing">
       <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col justify-between">
         <div class="self-start">
-          <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+          <a class="flex title-font font-medium items-center md:justify-start justify-center text-landing-text">
             {{ $logo := resources.Get .brand.logo }}
             <img src="{{$logo.RelPermalink}}" alt="logo" class="w-8 h-8 object-cover object-center">
-            <span class="ml-3 text-2xl font-extrabold italic text-slate-800">{{.brand.text}}</span>
+            <span class="ml-3 text-2xl font-extrabold italic">{{.brand.text}}</span>
           </a>
         </div>
         <div class="self-center">
-          <p class="items-center self-center justify-center text-center text-sm text-gray-500 sm:ml-auto sm:mr-auto sm:mt-0 mt-4 ">
+          <p class="items-center self-center justify-center text-center text-sm text-landing-text sm:ml-auto sm:mr-auto sm:mt-0 mt-4 ">
             © {{now.Year }} {{ .copyrightAuthor}}
           </p>
         </div>
         <div class="self-end">
           <span class="inline-flex  sm:ml-auto sm:mt-0 mt-0 justify-center sm:justify-start">
             {{ range .socialLinks }}
-            <a class="bg-gray-600 text-gray-200 hover:bg-cyan-600 mx-1 rounded" href="{{ .url }}" target="_blank" rel="noopener">
+            <a class="bg-button-background text-button-text hover:bg-accent hover:text-on-accent-bg h mx-1 rounded" href="{{ .url }}" target="_blank" rel="noopener">
                 <i data-feather="{{ .icon }}" class="h-10 w-10 p-2"></i>
             </a>
             {{ end }}

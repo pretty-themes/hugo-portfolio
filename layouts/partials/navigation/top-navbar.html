@@ -1,5 +1,5 @@
 <header
-  class="fixed top-0 z-50 w-full border-b border-slate-200 bg-white transition-all duration-300 print:hidden"
+  class="fixed top-0 z-50 w-full border-b border-border-color bg-white transition-all duration-300 print:hidden"
   id="top-navbar"
 >
   <div
@@ -18,7 +18,7 @@
             src="{{ $brandIcon.RelPermalink }}"
             alt="Brand Icon"
           />
-          <h1 class="pl-2 text-2xl font-extrabold italic text-slate-800">
+          <h1 class="pl-2 text-2xl font-extrabold italic text-title-text">
             {{ .brand.text }}
           </h1>
         </a>
@@ -27,24 +27,24 @@
 
     <div class="flex flex-1 items-center justify-end">
       <nav
-        class="hidden lg:flex lg:space-x-4 lg:text-xs lg:font-bold lg:uppercase lg:tracking-wide lg:text-gray-500"
+        class="hidden text-muted-text lg:flex lg:space-x-4 lg:text-xs lg:font-bold lg:uppercase lg:tracking-wide"
       >
         {{ range site.Menus.main }}
           <a
             href="{{ .PageRef }}"
-            class="block h-16 border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-cyan-600"
+            class="block h-16 border-b-4 border-transparent leading-[4rem] hover:border-current hover:text-accent"
           >
             {{ .Name }}
           </a>
         {{ end }}
       </nav>
 
-      <div class="ml-8 flex items-center text-gray-500">
+      <div class="ml-8 flex items-center text-muted-text">
         <div
-          class="flex items-center divide-x divide-slate-200 border-x border-slate-200"
+          class="flex items-center divide-x divide-border-color border-x border-border-color"
         >
           {{ if site.Params.topNavbar.search.enabled }}
-            <span class="hover:text-cyan-600">
+            <span class="hover:text-accent">
               <a
                 href="#"
                 class="block border-b-4 border-transparent p-6 hover:border-current"
@@ -56,7 +56,7 @@
           {{ end }}
 
           {{ if site.Params.topNavbar.settings.enabled }}
-            <span class="hover:text-cyan-600">
+            <span class="hover:text-accent">
               <button
                 type="button"
                 class="block border-b-4 border-transparent p-6 hover:border-current"

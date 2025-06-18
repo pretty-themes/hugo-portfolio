@@ -1,21 +1,21 @@
-{{$theme_selector:= slice "border border-gray-200" "h-16" "flex" "flex-col" "item-baseline" "p-2" "rounded-sm" "cursor-pointer"}}
-{{$theme_selector = $theme_selector | append "hover:bg-cyan-500" "hover:text-white"}}
-{{$theme_selector = $theme_selector | append "peer-checked:z-10" "peer-checked:bg-cyan-500" "peer-checked:text-white"}}
+{{$theme_selector:= slice "border border-border-color" "h-16" "flex" "flex-col" "item-baseline" "p-2" "rounded-sm" "cursor-pointer"}}
+{{$theme_selector = $theme_selector | append "hover:bg-accent" "hover:text-on-accent-bg"}}
+{{$theme_selector = $theme_selector | append "peer-checked:z-10" "peer-checked:bg-accent" "peer-checked:text-on-accent-bg"}}
 
-{{$accent_color:= slice "border border-gray-200" "h-8" "w-8" "mx-1" "flex" "flex-col" "item-baseline" "p-2" "rounded-full" "cursor-pointer"}}
-{{$accent_color = $accent_color | append "hover:bg-cyan-500" "hover:text-white"}}
-{{$accent_color = $accent_color | append "peer-checked:z-10" "peer-checked:ring-2" "peer-checked:ring-cyan-500"}}
+{{$accent_color:= slice "border border-border-color" "h-8" "w-8" "mx-1" "flex" "flex-col" "item-baseline" "p-2" "rounded-full" "cursor-pointer"}}
+{{$accent_color = $accent_color | append "hover:bg-accent" "hover:text-on-accent-bg"}}
+{{$accent_color = $accent_color | append "peer-checked:z-10" "peer-checked:ring-2" "peer-checked:ring-accent"}}
 
 
 {{$language_selector:= slice "h-8" "w-48" "inline-flex" "items-center" "my-1" "px-2" "rounded-sm"}}
-{{$language_selector = $language_selector | append "hover:bg-cyan-500" "hover:text-white"}}
-{{$language_selector = $language_selector | append "peer-checked:z-10" "peer-checked:bg-cyan-500" "peer-checked:text-white"}}
+{{$language_selector = $language_selector | append "hover:bg-accent" "hover:text-on-accent-bg"}}
+{{$language_selector = $language_selector | append "peer-checked:z-10" "peer-checked:bg-accent" "peer-checked:text-on-accent-bg"}}
 
-<div class="fixed inset-0 bg-cyan-50 opacity-0 hidden transition-all duration-300 ease-out z-10" id="opaque-filter"></div>
+<div class="fixed inset-0 opacity-0 hidden transition-all duration-300 ease-out z-10" id="opaque-filter"></div>
 
-<aside class="fixed top-16 min-h-screen bg-white shadow-xl w-96 px-4 py-2 z-10 transition-all duration-300 -right-128" id="setting-panel">
+<aside class="fixed top-16 min-h-screen bg-primary text-normal-text w-96 px-4 py-2 z-10 transition-all duration-300 -right-128" id="setting-panel">
     <div class="flex flex-col pb-4">
-        <h1 class="text-xl text-title font-bold">Theme</h1>
+        <h1 class="text-xl text-title-text font-bold">Theme</h1>
         <form class="grid grid-cols-3 gap-2 pt-2 w-56">
             <fieldset>
                 <input type="radio" class="peer hidden" id="system_theme" name="theme_selector">
@@ -42,13 +42,12 @@
     </div>
 
     <div class="flex flex-col pb-4">
-        <h1 class="text-xl text-title font-bold">Accent Color</h1>
+        <h1 class="text-xl text-title-text font-bold">Accent Color</h1>
         <form class="inline-flex w-full py-2">
             {{ range $color:= slice "blue" "indigo" "gray" "yellow"}}
             <fieldset>
                 <input type="radio" class="hidden peer" name="accent_color" id="{{$color}}">
-                <label class="{{delimit $accent_color " "}} bg-{{$color}}-500" for="{{$color}}">
-                    {{/*  <div class="rounded-full w-6 h-6 bg-{{$color}}-500 peer-checked"></div>  */}}
+                <label class="{{delimit $accent_color " "}} bg-{{$color}}-600" for="{{$color}}">
                 </label>
             </fieldset>
             {{ end }}
@@ -56,7 +55,7 @@
     </div>
 
     <div class="flex flex-col">
-        <h1 class="text-xl text-title font-bold">Language</h1>
+        <h1 class="text-xl text-title-text font-bold">Language</h1>
         <form class="flex flex-col w-full py-2">
             {{ range $language:=slice "English" "বাংলা" "Français" "Indonesian" "Deutsch" "Español" "简体中文" "हिन्दी" }}
                 <fieldset>
